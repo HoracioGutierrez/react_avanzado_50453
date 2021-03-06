@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html , body , #root {
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+#root > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: cornflowerblue;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+#root > header nav a {
+    margin-left: 1rem;
+}
+
+#root > main {
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+#root > footer {
+    background-color : rgb(36, 101, 223);
+    padding: 0.5rem;
+    color: white;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+#producto-listado {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.producto-card {
+    max-width: 300px;
+    padding: 1rem;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    margin: 1rem 0;
+}

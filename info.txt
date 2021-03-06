@@ -1,0 +1,34 @@
+src/
+    |_index.js
+    |_estilos.css
+    |_api/
+        |_store.js
+        |_reducer.js
+        |_actions.js
+    |_ui/
+        |_layout/
+            |_App.js
+            |_Header.js
+            |_Main.js
+            |_Footer.js
+            |_Nav.js
+        |_paginas/
+        |_componentes/
+
+
+PATRONES DE DISEÑO
+
+children : es una manera mas de pasar props , nos permite agregar-hacer escalable el UI
+
+HOC : Higher Order Component , nos permite manejar los props de un componente sin cambiar su UI agregando nuevos o filtrando
+
+
+MIDDLEWARES : funciones que se ejecutan antes que pase algo
+
+REDUX-THUNK : Es un middleware que nos permite desde una funcion actionCreator retornar un objeto plano o una funcion
+
+
+REDUX-SAGA
+
+
+HOOK

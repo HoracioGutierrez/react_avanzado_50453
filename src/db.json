@@ -1,0 +1,10 @@
+{
+    "productos" : [
+        {"id":1,"titulo":"Microfono","precio":2000,"stock":100,"userId":1},
+        {"id":2,"titulo":"Monitor","precio":30000,"stock":50,"userId":1},
+        {"id":3,"titulo":"Teclado","precio":2000,"stock":150,"userId":2}
+    ],
+    "usuarios" : [
+        {"id":1,"nombre":"Horacio","user":"horacio","password":123456}
+    ]
+}
