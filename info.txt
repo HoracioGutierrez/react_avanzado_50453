@@ -28,7 +28,10 @@ MIDDLEWARES : funciones que se ejecutan antes que pase algo
 REDUX-THUNK : Es un middleware que nos permite desde una funcion actionCreator retornar un objeto plano o una funcion
 
 
-REDUX-SAGA
+HOOK : Son funciones varias que adaptan componentes a una nueva funcionalidad. Solo pueden ejecutarse en componentes de tipo funcion
+
+useSelector : es un hook que me permite traer informacion del store de redux
+useDispatch : me da una referencia a la funcion dispatch
 
 
-HOOK
+REDUX-SAGA : Es un middleware que nos permite manejar los actions usando funciones generadoras

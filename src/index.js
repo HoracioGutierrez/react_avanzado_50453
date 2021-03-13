@@ -1,12 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from "./ui/layout/App"
+import {Provider} from "react-redux"
+import store from "./api/store"
 import {BrowserRouter} from "react-router-dom"
 import "./estilos.css"
 
 ReactDOM.render(
-    <BrowserRouter>
-        <App/>
-    </BrowserRouter>,
+    <Provider store={store}>
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
+    </Provider>,
     document.getElementById("root")
 )

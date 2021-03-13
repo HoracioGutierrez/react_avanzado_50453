@@ -2,20 +2,29 @@ import React from 'react'
 import Header from "./Header"
 import Footer from "./Footer"
 import Main from "./Main"
-import {Provider} from "react-redux"
-import store from "../../api/store"
+import {connect} from "react-redux"
+import {autoLogin} from "../../api/actions"
+import Modal from '../componentes/Modal'
 
 class App extends React.Component {
 
+    componentDidMount(){
+        this.props.autoLogin()
+    }
+
     render(){
         return(
-            <Provider store={store}>
+            <>
+                <Modal/>
                 <Header/>
                 <Main/>
                 <Footer/>
-            </Provider>
+            </>
         )
     }
 }
 
-export default App
+export default connect(
+    null,
+    {autoLogin}
+)(App)

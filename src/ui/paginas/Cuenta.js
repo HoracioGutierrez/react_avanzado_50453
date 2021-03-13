@@ -1,32 +1,29 @@
 import React from 'react'
 import Seccion from "../componentes/Seccion"
-import {connect} from "react-redux"
+import {useSelector,useDispatch} from "react-redux"
+import {nuevoProductoChange,nuevoProductoSubmit} from "../../api/actions"
 
-const Cuenta = ({nuevo_producto}) => {
+const Cuenta = () => {
 
+    const nuevo_producto = useSelector((store)=>store.Productos.nuevo_producto)
+    const dispatch = useDispatch()
     const {titulo,precio,stock} = nuevo_producto
 
     return (
         <Seccion titulo="Cuenta" tituloSection="producto-formulario">
             <h3>Carga de Productos</h3>
             <div>
-                <input type="text" placeholder="Titulo" value={titulo}/>
+                <input type="text" placeholder="Titulo" value={titulo} id="titulo" onChange={e=>nuevoProductoChange(e.target.id,e.target.value,dispatch)}/>
             </div>
             <div>
-                <input type="number" placeholder="Precio" value={precio}/>
+                <input type="number" placeholder="Precio" value={precio} id="precio" onChange={e=>nuevoProductoChange(e.target.id,e.target.value,dispatch)}/>
             </div>
             <div>
-                <input type="stock" placeholder="Stock" value={stock}/>
+                <input type="stock" placeholder="Stock" value={stock} id="stock" onChange={e=>nuevoProductoChange(e.target.id,e.target.value,dispatch)}/>
             </div>
-            <button>Agregar</button>
+            <button onClick={()=>nuevoProductoSubmit(titulo,precio,stock,dispatch)}>Agregar</button>
         </Seccion>
     )
 }
 
-const mapStateToProps = (store) => {
-    return {
-        nuevo_producto : store.Productos.nuevo_producto
-    }
-}
-
-export default connect(mapStateToProps)(Cuenta)
+export default Cuenta

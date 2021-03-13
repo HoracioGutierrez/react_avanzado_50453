@@ -1,10 +1,51 @@
 {
-    "productos" : [
-        {"id":1,"titulo":"Microfono","precio":2000,"stock":100,"userId":1},
-        {"id":2,"titulo":"Monitor","precio":30000,"stock":50,"userId":1},
-        {"id":3,"titulo":"Teclado","precio":2000,"stock":150,"userId":2}
-    ],
-    "usuarios" : [
-        {"id":1,"nombre":"Horacio","user":"horacio","password":123456}
-    ]
+  "productos": [
+    {
+      "id": 1,
+      "titulo": "Microfono",
+      "precio": 2000,
+      "stock": 100,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "titulo": "Monitor",
+      "precio": 30000,
+      "stock": 50,
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "titulo": "Teclado",
+      "precio": 2000,
+      "stock": 150,
+      "userId": 2
+    },
+    {
+      "titulo": "auriculares",
+      "precio": "50",
+      "stock": "5",
+      "id": 4
+    },
+    {
+      "titulo": "Luces Led",
+      "precio": "2000",
+      "stock": "60",
+      "id": 5
+    },
+    {
+      "titulo": "disco externo",
+      "precio": "5000",
+      "stock": "84",
+      "id": 6
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Horacio",
+      "email": "test@test.com",
+      "password": 123456
+    }
+  ]
 }
