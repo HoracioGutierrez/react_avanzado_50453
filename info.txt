@@ -35,3 +35,27 @@ useDispatch : me da una referencia a la funcion dispatch
 
 
 REDUX-SAGA : Es un middleware que nos permite manejar los actions usando funciones generadoras
+
+
+
+
+
+
+async function foo(){
+    await 
+}
+
+
+function* foo(){
+
+
+
+    yield() //pausa
+
+
+}
+
+
+const iterable = foo()  //{next:fn(){},done:true}
+
+iterable.next()

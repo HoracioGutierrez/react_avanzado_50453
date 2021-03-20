@@ -80,3 +80,32 @@ export const nuevoProductoSubmit = (titulo,precio,stock,dispatch) => {
         dispatch({type:"NUEVO_PRODUCTO_ERROR",err})
     })
 }
+
+export const borrarProducto = (id,dispatch) => {
+    dispatch({type:"BORRAR_PRODUCTO_PENDING"})
+    fetch(`http://localhost:4000/productos/${id}`,{ method : "DELETE" })
+    .then(res=>{
+        dispatch({type:"BORRAR_PRODUCTO_SUCCESS",id})
+        dispatch({ type : "MODAL_CLOSE" })
+    })
+    .catch(err=>{
+        dispatch({type:"BORRAR_PRODUCTO_ERROR"})
+    })
+
+}
+
+export const openModal = texto => ({ type : "MODAL_OPEN" , texto }) 
+
+export const closeModal = dispatch => {
+    dispatch({ type : "MODAL_CLOSE" })
+}
+
+export const toggleFormulario = (id) => ({ type : "FORMULARIO_EDITAR" , id })
+
+export const editarProducto = (id,titulo,precio,stock,dispatch) => {
+    fetch(`http://localhost:4000/productos/${id}`,{
+        method : "PATCH",
+        headers : {"content-type":"application/json"},
+        body : JSON.stringify({titulo,precio,stock})
+    })
+}

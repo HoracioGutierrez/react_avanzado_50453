@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Loader = ({loading}) => {
+const Loader = ({loading,texto}) => {
     if(loading){
         return (
-            <div>Cargando Productos...</div>
+            <div>{texto}</div>
         )
     }else{
         return null

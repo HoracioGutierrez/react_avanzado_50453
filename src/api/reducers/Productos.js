@@ -1,5 +1,9 @@
 const initialState = {
     productos_general : [],
+    formulario_editar : {
+        editar : false,
+        id : 0
+    },
     pedido_productos : {
         pending : false,
         error : false
@@ -10,11 +14,62 @@ const initialState = {
         stock : 1,
         pending : false,
         error : false
+    },
+    borrar_producto : {
+        pending : false,
+        error : false
     }
 }
 
 export default (state = initialState, action) => {
     switch (action.type) {
+
+        case "FORMULARIO_EDITAR" : 
+
+            const producto = state.productos_general.filter(producto=>producto.id===action.id)[0]
+
+            return {
+                ...state,
+                formulario_editar : {
+                    editar : true,
+                    id : action.id
+                },
+                nuevo_producto : {
+                    ...state.nuevo_producto,
+                    titulo : producto.titulo,
+                    precio : producto.precio,
+                    stock : producto.stock,
+                }
+            }
+
+        case "BORRAR_PRODUCTO_PENDING" : 
+            return {
+                ...state,
+                borrar_producto : {
+                    ...state.borrar_producto,
+                    pending : true
+                }
+            }
+        
+        case "BORRAR_PRODUCTO_SUCCESS" : 
+            return {
+                ...state,
+                borrar_producto : {
+                    ...state.borrar_producto,
+                    pending : false
+                },
+                productos_general : state.productos_general.filter((producto)=>producto.id!==action.id?true:false)
+            }
+
+        case "BORRAR_PRODUCTO_ERROR" : 
+            return {
+                ...state,
+                borrar_producto : {
+                    ...state.borrar_producto,
+                    pending : false
+                }
+            }
+
         case "NUEVO_PRODUCTO_PENDING" :
             return {
                 ...state,

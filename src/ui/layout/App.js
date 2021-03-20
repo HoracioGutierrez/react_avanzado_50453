@@ -8,6 +8,17 @@ import Modal from '../componentes/Modal'
 
 class App extends React.Component {
 
+    constructor(){
+        super()
+        this.state = {
+            id : 0
+        }
+    }
+
+    setId = (id) => {
+        this.setState({id})
+    }
+
     componentDidMount(){
         this.props.autoLogin()
     }
@@ -15,9 +26,9 @@ class App extends React.Component {
     render(){
         return(
             <>
-                <Modal/>
+                <Modal id={this.state.id}/>
                 <Header/>
-                <Main/>
+                <Main setId={this.setId}/>
                 <Footer/>
             </>
         )

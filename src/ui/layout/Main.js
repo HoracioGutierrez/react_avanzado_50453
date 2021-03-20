@@ -8,7 +8,7 @@ import Login from "../paginas/Login"
 import { RutaPrivada, RutaPublica } from '../componentes/CustomRoutes'
 import Logout from '../paginas/Logout'
 
-const Main = () => {
+const Main = ({setId}) => {
     return (
         <main>
             <Switch>
@@ -18,7 +18,7 @@ const Main = () => {
                 </Route>
 
                 <Route path="/productos">
-                    <Productos/>
+                    <Productos setId={setId}/>
                 </Route>
 
                 <Route path="/carrito">
