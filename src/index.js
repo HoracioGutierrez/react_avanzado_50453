@@ -5,6 +5,7 @@ import {Provider} from "react-redux"
 import store from "./api/store"
 import {BrowserRouter} from "react-router-dom"
 import "./estilos.css"
+import contexto from "./api/contexto"
 
 ReactDOM.render(
     <Provider store={store}>

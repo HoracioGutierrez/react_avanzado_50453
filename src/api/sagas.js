@@ -1,5 +1,10 @@
-import {} from "redux-saga/effects"
+import {all} from "redux-saga/effects"
+
+
+function* watcherSaga(){}
 
 function* rootSaga() {
-    yield []
+    yield all([watcherSaga()])
 }
+
+export default rootSaga

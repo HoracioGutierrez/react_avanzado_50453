@@ -39,13 +39,13 @@ export const loginSubmit = (email,password,dispatch) => {
 
 
 
-export const autoLogin = () => {
+export const autoLogin = (dispatch) => {
     const storage_logged = Number(localStorage.getItem("islogged"))
     const logged = Boolean(storage_logged)
     if(logged){
-        return ({type:"AUTOLOGIN_SUCCESS"})
+        dispatch({type:"AUTOLOGIN_SUCCESS"})
     }else{
-        return ({type:"AUTOLOGIN_ERROR"})
+        dispatch({type:"AUTOLOGIN_ERROR"})
     }
 }
 
@@ -109,3 +109,27 @@ export const editarProducto = (id,titulo,precio,stock,dispatch) => {
         body : JSON.stringify({titulo,precio,stock})
     })
 }
+
+
+/* 
+const pedidoUno = () => {}
+
+const pedidoDos = () => {}
+
+const pedidoTres = () => {}
+
+
+
+const miAction = () => {
+    //aca no puedo hacer nada asincronico(fetch)
+    return (dispatch)=>{
+        
+        dispatch()
+
+        pedidoUno()
+        pedidoDos()
+        pedidoTres()
+    }
+}
+ */
+//Usuarios - Posteos - Comentarios
