@@ -7,6 +7,8 @@ import {BrowserRouter} from "react-router-dom"
 import "./estilos.css"
 import contexto from "./api/contexto"
 
+//import App from "./demo/App"
+
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>

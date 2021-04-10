@@ -59,3 +59,16 @@ function* foo(){
 const iterable = foo()  //{next:fn(){},done:true}
 
 iterable.next()
+
+
+
+useState()
+useReducer()
+useContext()
+useEffect()
+
+useRef()
+
+useMemo() : Memorizar propiedades computadas
+useCallback() : Memoriza funciones
+memo() : Memoriza un componente
